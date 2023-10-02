@@ -1,0 +1,18 @@
+.nav-bar {
+    height: 64px;
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-bar h1 {
+    margin: 30px;
+    font-size: 1.5rem;
+}
+
+.nav-bar img {
+    margin: 30px;
+    width: 50px;
+    height: 50px;
+}

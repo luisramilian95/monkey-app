@@ -1,0 +1,55 @@
+<div class="verification-code">
+	<ion-input
+		#code1
+		placeholder="0"
+		name="code1"
+		[maxlength]="1"
+		(ionInput)="nextCode(1, $event)"
+		[(ngModel)]="character1"
+	></ion-input>
+
+	<ion-input
+		#code2
+		placeholder="0"
+		[maxlength]="1"
+		name="code2"
+		[(ngModel)]="character2"
+		(ionInput)="nextCode(2, $event)"
+	></ion-input>
+
+	<ion-input
+		#code3
+		placeholder="0"
+		name="code3"
+		[maxlength]="1"
+		[(ngModel)]="character3"
+		(ionInput)="nextCode(3, $event)"
+	></ion-input>
+
+	<ion-input
+		#code4
+		placeholder="0"
+		name="code4"
+		[maxlength]="1"
+		[(ngModel)]="character4"
+		(ionInput)="nextCode(4, $event)"
+	></ion-input>
+
+	<ion-input
+		#code5
+		placeholder="0"
+		[maxlength]="1"
+		name="code5"
+		[(ngModel)]="character5"
+		(ionInput)="nextCode(5, $event)"
+	></ion-input>
+
+	<ion-input
+		#code6
+		placeholder="0"
+		[maxlength]="1"
+		name="code6"
+		[(ngModel)]="character6"
+		(ionInput)="nextCode(6, $event)"
+	></ion-input>
+</div>
