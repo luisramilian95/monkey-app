@@ -3,7 +3,7 @@ import { CommonModule } from "@angular/common";
 import { IonicModule } from "@ionic/angular";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
-import { ProfileRoutingModule } from "./profile-routing.module";
+import { TicketRoutingModule } from "./ticket-routing.module";
 
 @NgModule({
 	imports: [
@@ -11,7 +11,7 @@ import { ProfileRoutingModule } from "./profile-routing.module";
 		FormsModule,
 		ReactiveFormsModule,
 		IonicModule,
-		ProfileRoutingModule,
+		TicketRoutingModule,
 	],
 	declarations: [],
 })
