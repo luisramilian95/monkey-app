@@ -28,3 +28,12 @@
 input:focus-visible {
 	outline: none !important;
 }
+
+ion-toolbar {
+	--background: white;
+}
+
+ion-tab-bar,
+ion-tab-button {
+	background-color: white;
+}

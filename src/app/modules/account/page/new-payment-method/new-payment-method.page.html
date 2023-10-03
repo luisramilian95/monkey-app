@@ -1,0 +1,86 @@
+<ion-header [translucent]="true" class="ion-no-border">
+	<ion-toolbar>
+		<ion-buttons slot="end">
+			<ion-button> Save </ion-button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+	<h1>New Payment Method</h1>
+
+	<div class="account-form">
+		<ion-card>
+			<ion-card-header>
+				<ion-text color="dark">
+					<h2>Credit Card</h2>
+				</ion-text>
+			</ion-card-header>
+			<ion-list lines="none">
+				<ion-item>
+					<ion-label position="stacked">Card Number</ion-label>
+					<ion-input
+						[maskito]="cardMask"
+						[maskitoElement]="maskPredicate"
+						placeholder="0000-0000-0000-0000"
+					></ion-input>
+				</ion-item>
+
+				<ion-item>
+					<ion-row>
+						<ion-col>
+							<ion-label position="stacked">Expiration</ion-label>
+							<ion-input
+								[maskito]="expirationDateMask"
+								[maskitoElement]="maskPredicate"
+								placeholder="MM/YY"
+							></ion-input>
+						</ion-col>
+						<ion-col>
+							<ion-label position="stacked">CVV</ion-label>
+							<ion-input
+								[maskito]="cvvMask"
+								[maskitoElement]="maskPredicate"
+								placeholder="000"
+							/>
+						</ion-col>
+					</ion-row>
+				</ion-item>
+			</ion-list>
+
+			<ion-card-header>
+				<ion-text color="dark">
+					<h2>Personal Information</h2>
+				</ion-text>
+			</ion-card-header>
+
+			<ion-list lines="none">
+				<ion-item>
+					<ion-row>
+						<ion-col>
+							<ion-label position="stacked">First Name</ion-label>
+							<ion-input type="text"></ion-input>
+						</ion-col>
+						<ion-col>
+							<ion-label position="stacked">Last Name</ion-label>
+							<ion-input type="text" />
+						</ion-col>
+					</ion-row>
+				</ion-item>
+			</ion-list>
+
+			<ion-list lines="none">
+				<ion-item>
+					<ion-button
+						slot="end"
+						[routerLink]="'/profile/settings'"
+						fill="clear"
+						color="dark"
+					>
+						Cancel
+					</ion-button>
+				</ion-item>
+			</ion-list>
+		</ion-card>
+	</div>
+</ion-content>

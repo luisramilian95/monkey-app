@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" class="ion-no-border">
 	<ion-toolbar>
 		<ion-buttons slot="start">
 			<ion-back-button></ion-back-button>
@@ -6,32 +6,66 @@
 		<ion-buttons slot="end">
 			<ion-button> Save </ion-button>
 		</ion-buttons>
-		<ion-title>Account</ion-title>
 	</ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-	<ion-card>
-		<ion-card-header>
-			<ion-card-title>Profile</ion-card-title>
-		</ion-card-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+	<h1>Personal Information</h1>
 
-		<ion-list>
-			<ion-item>
+	<div class="account-form">
+		<div></div>
+		<ion-card>
+			<ion-list lines="none">
 				<ion-item>
-					<ion-label position="stacked">First Name</ion-label>
+					<ion-avatar slot="start">
+						<img
+							alt="Silhouette of a person's head"
+							src="https://ionicframework.com/docs/img/demos/avatar.svg"
+						/>
+					</ion-avatar>
+					<ion-label>
+						<h3>Username</h3>
+					</ion-label>
+				</ion-item>
+			</ion-list>
+
+			<ion-card-header>
+				<ion-text color="dark">
+					<h3>Profile</h3>
+				</ion-text>
+			</ion-card-header>
+			<ion-list lines="none">
+				<ion-item>
+					<ion-row>
+						<ion-col>
+							<ion-label position="stacked">First Name</ion-label>
+							<ion-input type="text"></ion-input>
+						</ion-col>
+						<ion-col>
+							<ion-label position="stacked">Last Name</ion-label>
+							<ion-input type="text" />
+						</ion-col>
+					</ion-row>
+				</ion-item>
+			</ion-list>
+
+			<ion-card-header>
+				<ion-text color="dark">
+					<h3>Contact Information</h3>
+				</ion-text>
+			</ion-card-header>
+
+			<ion-list lines="none">
+				<ion-item>
+					<ion-label position="stacked">Email Address</ion-label>
+					<ion-input type="email"> </ion-input>
+				</ion-item>
+
+				<ion-item>
+					<ion-label position="stacked">Phone Number</ion-label>
 					<ion-input> </ion-input>
 				</ion-item>
-				<ion-item>
-					<ion-label position="stacked">Last Name</ion-label>
-					<ion-input> </ion-input>
-				</ion-item>
-			</ion-item>
-
-			<ion-item>
-				<ion-label position="stacked">Username</ion-label>
-				<ion-input> </ion-input>
-			</ion-item>
-		</ion-list>
-	</ion-card>
+			</ion-list>
+		</ion-card>
+	</div>
 </ion-content>
