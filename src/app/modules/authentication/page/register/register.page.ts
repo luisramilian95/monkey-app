@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormControl, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
-import { SignUpModel } from "@models/authentication.interface";
+import { SignUpRequestModel } from "@models/authentication.interface";
 import { AuthenticationService } from "@services/authentication.service";
 import { ToastService } from "@services/toast.service";
 
@@ -40,7 +40,7 @@ export class RegisterPage implements OnInit {
 		const { email, password, username, firstName, lastName } =
 			this.registerForm.getRawValue();
 
-		const signUp: SignUpModel = {
+		const signUp: SignUpRequestModel = {
 			email,
 			password,
 			username,

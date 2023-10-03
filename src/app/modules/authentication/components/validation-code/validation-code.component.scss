@@ -10,14 +10,14 @@
 	font-size: 1.2em;
 	text-align: center;
 	border-radius: 10px;
-	border: 3px solid #e2e4e3;
+	border: 2px solid #e2e4e3;
 	--highlight-color: black !important;
 }
 
 .verification-code ion-input:hover {
-	border: 3px solid black;
+	border: 2px solid black !important;
 }
 
-.verification-code ion-input::after::before {
-	--tw-ring-color: black !important;
+.has-focus {
+	border: 2px solid black !important;
 }

@@ -31,11 +31,23 @@
       "@shared/*": [
         "src/app/modules/shared/*"
       ],
-      "@auth/*": [
+      "@authentication/*": [
         "src/app/modules/authentication/*"
       ],
       "@home/*": [
-        "src/app/modules/dashboard/*"
+        "src/app/modules/home/*"
+      ],
+      "@events/*": [
+        "src/app/modules/events/*"
+      ],
+      "@tickets/*": [
+        "src/app/modules/tickets/*"
+      ],
+      "@profile/*": [
+        "src/app/modules/profile/*"
+      ],
+      "@components/*": [
+        "src/app/modules/components/*"
       ],
       "@environments/*": [
         "./src/environments/*"

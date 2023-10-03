@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { AuthenticationService } from "@services/authentication.service";
-import { RecoverPasswordModel } from "@models/authentication.interface";
+import { RecoverPasswordRequestModel } from "@models/authentication.interface";
 import { ToastService } from "@services/toast.service";
 @Component({
 	selector: "app-recovery",
@@ -50,7 +50,7 @@ export class RecoveryPage implements OnInit {
 
 		const { username, password } = this.form.getRawValue();
 
-		const recoverPassword: RecoverPasswordModel = {
+		const recoverPassword: RecoverPasswordRequestModel = {
 			username,
 			password,
 			code: this.code,

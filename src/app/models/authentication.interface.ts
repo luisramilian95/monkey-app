@@ -1,4 +1,4 @@
-export interface SignUpModel {
+export interface SignUpRequestModel {
 	firstName: string | null;
 	lastName: string | null;
 	username: string | null;
@@ -6,8 +6,14 @@ export interface SignUpModel {
 	password: string | null;
 }
 
-export interface RecoverPasswordModel {
+export interface RecoverPasswordRequestModel {
 	code: string | null;
 	username: string | null;
 	password: string | null;
+}
+
+export interface SignInResponseModel {
+	accessToken: string;
+	refreshToken: string;
+	expiresIn: number;
 }

@@ -1,11 +1,13 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { environment } from "@environments/environment";
+import { TokenService } from "@services/token.service";
 import {
-	RecoverPasswordModel,
-	SignUpModel,
+	RecoverPasswordRequestModel,
+	SignInResponseModel,
+	SignUpRequestModel,
 } from "@models/authentication.interface";
-import { catchError } from "rxjs";
+import { catchError, tap } from "rxjs";
 
 @Injectable({
 	providedIn: "root",
@@ -13,14 +15,20 @@ import { catchError } from "rxjs";
 export class AuthenticationService {
 	private readonly AUTH_URL = `${environment.golipass_app}/auth`;
 
-	constructor(private http: HttpClient) {}
+	constructor(private http: HttpClient, private tokenService: TokenService) {}
 
 	public login(username: string | null, password: string | null) {
 		const url: string = `${this.AUTH_URL}/sign-in`;
-		return this.http.post(url, { username, password });
+		return this.http
+			.post<SignInResponseModel>(url, { username, password })
+			.pipe(
+				tap((response) => {
+					this.tokenService.saveToken(response.accessToken);
+				})
+			);
 	}
 
-	public register(signUp: SignUpModel) {
+	public register(signUp: SignUpRequestModel) {
 		const url: string = `${this.AUTH_URL}/sign-up`;
 		return this.http.post(url, signUp);
 	}
@@ -30,7 +38,7 @@ export class AuthenticationService {
 		return this.http.post(url, { username });
 	}
 
-	public recoverPassword(recoverPassword: RecoverPasswordModel) {
+	public recoverPassword(recoverPassword: RecoverPasswordRequestModel) {
 		const url: string = `${this.AUTH_URL}/recover-password`;
 		return this.http.post(url, recoverPassword);
 	}
