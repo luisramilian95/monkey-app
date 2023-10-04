@@ -5,7 +5,7 @@ import { Preferences } from "@capacitor/preferences";
 	providedIn: "root",
 })
 export class TokenService {
-	private readonly TOKEN_NAME = "TOKEN";
+	private readonly TOKEN_NAME = "GOLIPASS_TOKEN";
 
 	constructor() {}
 

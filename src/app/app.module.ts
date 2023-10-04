@@ -9,6 +9,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { HttpClientModule } from "@angular/common/http";
 
 import { TabsComponent } from "@components/tabs/tabs.component";
+import { GraphQLModule } from "./graphql/graphql.module";
 
 @NgModule({
 	declarations: [AppComponent, TabsComponent],
@@ -17,6 +18,7 @@ import { TabsComponent } from "@components/tabs/tabs.component";
 		IonicModule.forRoot(),
 		AppRoutingModule,
 		HttpClientModule,
+		GraphQLModule,
 	],
 	providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
 	bootstrap: [AppComponent],

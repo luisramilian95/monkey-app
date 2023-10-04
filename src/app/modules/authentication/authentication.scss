@@ -6,30 +6,6 @@
 	height: 100%;
 }
 
-.authentication-form input {
-	margin: 5px;
-	padding: 3%;
-	text-align: center;
-	background: #f4f5f8;
-	border: none;
-	border-radius: 8px;
-	color: black;
-	caret-color: black;
-	width: 100%;
-}
-
-.authentication-form input:hover {
-	border: 2px solid black;
-}
-
-.authentication-form input:focus {
-	border: 2px solid black;
-}
-
-.authentication-form input:active {
-	border: 2px solid black;
-}
-
 .authentication-form ion-card {
 	width: 100%;
 	max-width: 400px;

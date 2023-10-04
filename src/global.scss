@@ -37,3 +37,60 @@ ion-tab-bar,
 ion-tab-button {
 	background-color: white;
 }
+
+form ion-item input {
+	margin: 5px;
+	padding: 3%;
+	text-align: center;
+	background: #f4f5f8;
+	border: 2px solid #f4f5f8;
+	border-radius: 8px;
+	color: black;
+	caret-color: black;
+	width: 100%;
+}
+
+form input {
+	margin: 8px;
+	padding: 3%;
+	text-align: center;
+	background: #f4f5f8;
+	border: 2px solid #f4f5f8;
+	border-radius: 8px;
+	color: black;
+	caret-color: black;
+	width: 90%;
+}
+
+form input:hover {
+	border: 2px solid black;
+}
+
+form input:focus {
+	border: 2px solid black;
+}
+
+form input:active {
+	border: 2px solid black;
+}
+
+ion-input {
+	margin-top: 8px;
+	text-align: center;
+	background: #f4f5f8;
+	border: 2px solid #f4f5f8;
+	border-radius: 8px;
+	color: black !important;
+	caret-color: black;
+	height: 35px !important;
+	--highlight-color: none !important;
+}
+
+ion-input:hover {
+	border: 2px solid black;
+}
+
+.has-focus {
+	--highlight-color: none !important;
+	border: 2px solid black;
+}

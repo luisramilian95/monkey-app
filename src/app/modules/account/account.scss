@@ -5,28 +5,13 @@
 	height: 100%;
 }
 
-.account-form ion-input {
-	margin-top: 10px;
-	padding: 3%;
-	text-align: center;
-	background: #f4f5f8;
-	border-radius: 8px;
-	border: none;
-	color: black;
-	width: 100%;
-	--highlight-color: black !important;
-}
-
-.account-form ion-item {
-	--highlight-height: 0px;
-}
-
 .account-form ion-card {
 	width: 100%;
 	max-width: 400px;
 	box-shadow: none !important;
 }
 
-.has-focus {
-	border: 2px solid black !important;
+.header {
+	display: flex;
+	justify-content: space-between;
 }
