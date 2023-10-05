@@ -29,15 +29,14 @@
 		"@ionic/angular": "^7.0.0",
 		"@maskito/angular": "^1.7.0",
 		"@maskito/core": "^1.7.0",
-		"angularx-qrcode": "^16.0.2",
 		"apollo-angular": "^5.0.2",
 		"graphql": "^16",
 		"ionic-input-mask": "^1.0.1",
 		"ionicons": "^7.0.0",
 		"jssha": "^3.3.1",
 		"rxjs": "~7.8.0",
-		"tslib": "^2.3.0",
-		"zone.js": "~0.13.0"
+		"tslib": "^2.6.2",
+		"zone.js": "~0.13.3"
 	},
 	"devDependencies": {
 		"@angular-devkit/build-angular": "^16.0.0",
@@ -58,7 +57,6 @@
 		"@types/jasmine": "~4.3.0",
 		"@types/jssha": "^3.0.0",
 		"@types/node": "^12.11.1",
-		"@types/qrcode": "^1.5.2",
 		"@typescript-eslint/eslint-plugin": "5.3.0",
 		"@typescript-eslint/parser": "5.3.0",
 		"autoprefixer": "^10.4.16",
