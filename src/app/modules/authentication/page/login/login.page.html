@@ -3,11 +3,16 @@
 <ion-content [fullscreen]="true" scroll-y="false">
 	<div class="authentication-form">
 		<ion-card>
+			<div class="logo">
+				<img src="assets/logo.png" alt="golipass logo" />
+			</div>
 			<ion-card-header>
-				<ion-card-title> Login </ion-card-title>
-				<ion-card-subtitle
-					>Please sign in to continue
-				</ion-card-subtitle>
+				<div>
+					<ion-card-title> Login </ion-card-title>
+					<ion-card-subtitle
+						>Please sign in to continue
+					</ion-card-subtitle>
+				</div>
 			</ion-card-header>
 			<ion-card-content>
 				<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">

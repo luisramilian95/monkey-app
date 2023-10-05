@@ -73,3 +73,16 @@
 .authentication-form .invalid ion-label p {
 	color: var(--ion-color-danger);
 }
+
+.authentication-form .logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.authentication-form .logo img {
+	margin: 10px;
+	margin-right: 20px;
+	width: 50px;
+	height: 50px;
+}
