@@ -2,7 +2,6 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { AccountPage } from "./page/account/account.page";
 import { PaymentMethodsPage } from "./page/payment-methods/payment-methods.page";
-import { NewPaymentMethodPage } from "./page/new-payment-method/new-payment-method.page";
 
 const routes: Routes = [
 	{
@@ -12,10 +11,6 @@ const routes: Routes = [
 	{
 		path: "payment-methods",
 		component: PaymentMethodsPage,
-	},
-	{
-		path: "new-payment-method",
-		component: NewPaymentMethodPage,
 	},
 ];
 

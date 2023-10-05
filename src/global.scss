@@ -38,18 +38,7 @@ ion-tab-button {
 	background-color: white;
 }
 
-form ion-item input {
-	margin: 5px;
-	padding: 3%;
-	text-align: center;
-	background: #f4f5f8;
-	border: 2px solid #f4f5f8;
-	border-radius: 8px;
-	color: black;
-	caret-color: black;
-	width: 100%;
-}
-
+form ion-item input,
 form input {
 	margin: 8px;
 	padding: 3%;
@@ -74,23 +63,28 @@ form input:active {
 	border: 2px solid black;
 }
 
-ion-input {
+form ion-input,
+form ion-item ion-input {
 	margin-top: 8px;
 	text-align: center;
-	background: #f4f5f8;
+	background: #f4f5f8 !important;
 	border: 2px solid #f4f5f8;
 	border-radius: 8px;
 	color: black !important;
 	caret-color: black;
-	height: 35px !important;
+	height: 40px !important;
 	--highlight-color: none !important;
 }
 
-ion-input:hover {
+form ion-input:hover {
 	border: 2px solid black;
+}
+
+form ion-item {
+	--highlight-height: 0px;
 }
 
 .has-focus {
-	--highlight-color: none !important;
-	border: 2px solid black;
+	border: 2px solid black !important;
+	caret-color: black !important;
 }

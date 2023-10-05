@@ -33,8 +33,8 @@ const routes: Routes = [
 				path: "tickets",
 				title: "Tickets",
 				loadChildren: () =>
-					import("./modules/home/home.module").then(
-						(m) => m.HomePageModule
+					import("./modules/ticket/ticket.module").then(
+						(m) => m.TicketModule
 					),
 			},
 			{

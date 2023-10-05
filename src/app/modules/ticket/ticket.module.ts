@@ -4,6 +4,10 @@ import { IonicModule } from "@ionic/angular";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { TicketRoutingModule } from "./ticket-routing.module";
+import { TicketsPage } from "./page/tickets/tickets.page";
+import { TicketItemComponent } from "./components/ticket-item/ticket-item.component";
+import { TicketPage } from "./page/ticket/ticket.page";
+import { TicketComponent } from "src/app/modules/ticket/components/ticket/ticket.component";
 
 @NgModule({
 	imports: [
@@ -13,6 +17,11 @@ import { TicketRoutingModule } from "./ticket-routing.module";
 		IonicModule,
 		TicketRoutingModule,
 	],
-	declarations: [],
+	declarations: [
+		TicketsPage,
+		TicketItemComponent,
+		TicketPage,
+		TicketComponent,
+	],
 })
-export class ProfileModule {}
+export class TicketModule {}

@@ -1,0 +1,176 @@
+<ion-header [translucent]="true" class="ion-no-border">
+	<ion-toolbar>
+		<ion-buttons slot="end">
+			<ion-button (click)="confirm()"> Save </ion-button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+	<div class="account-form">
+		<div>
+			<h1>New Payment Method</h1>
+
+			<ion-card>
+				<form [formGroup]="form">
+					<ion-text color="dark">
+						<h3>Credit Card</h3>
+					</ion-text>
+					<ion-list lines="none">
+						<ion-item>
+							<ion-label
+								position="stacked"
+								class="invalid"
+								color="dark"
+								><ion-text>Card Number</ion-text
+								><ion-text
+									color="danger"
+									*ngIf="
+										form.controls.cardNumber.touched &&
+										form.controls.cardNumber.invalid
+									"
+									>Invalid</ion-text
+								></ion-label
+							>
+
+							<ion-input
+								[maskito]="cardMask"
+								[maskitoElement]="maskPredicate"
+								placeholder="0000-0000-0000-0000"
+								formControlName="cardNumber"
+								aria-label="Card Number"
+								name="cardNumber"
+							></ion-input>
+						</ion-item>
+
+						<ion-item>
+							<ion-row>
+								<ion-col>
+									<ion-label
+										position="stacked"
+										class="invalid"
+										color="dark"
+										><ion-text>Expiration Date</ion-text
+										><ion-text
+											color="danger"
+											*ngIf="
+												form.controls.expirationDate
+													.touched &&
+												form.controls.expirationDate
+													.invalid
+											"
+											>Invalid</ion-text
+										></ion-label
+									>
+									<ion-input
+										[maskito]="expirationDateMask"
+										[maskitoElement]="maskPredicate"
+										placeholder="MM/YY"
+										aria-label="Expiration Date"
+										formControlName="expirationDate"
+										name="expirationDate"
+									></ion-input>
+								</ion-col>
+								<ion-col>
+									<ion-label
+										position="stacked"
+										class="invalid"
+										color="dark"
+										><ion-text>CVV</ion-text
+										><ion-text
+											color="danger"
+											*ngIf="
+												form.controls.cvv.touched &&
+												form.controls.cvv.invalid
+											"
+											>Invalid</ion-text
+										></ion-label
+									>
+									<ion-input
+										[maskito]="cvvMask"
+										[maskitoElement]="maskPredicate"
+										placeholder="000"
+										formControlName="cvv"
+										name="cvv"
+										aria-label="CVV"
+									/>
+								</ion-col>
+							</ion-row>
+						</ion-item>
+					</ion-list>
+
+					<ion-text color="dark">
+						<h3>Card Information</h3>
+					</ion-text>
+
+					<ion-list lines="none">
+						<ion-item>
+							<ion-row>
+								<ion-col>
+									<ion-label
+										color="dark"
+										position="stacked"
+										class="invalid"
+									>
+										<ion-text>First Name</ion-text>
+										<ion-text
+											color="danger"
+											*ngIf="
+												form.controls.firstName
+													.touched &&
+												form.controls.firstName.invalid
+											"
+											>Invalid</ion-text
+										>
+									</ion-label>
+									<ion-input
+										type="text"
+										aria-label="First Name"
+										formControlName="firstName"
+										name="firstName"
+									></ion-input>
+								</ion-col>
+								<ion-col>
+									<ion-label
+										position="stacked"
+										class="invalid"
+										color="dark"
+										><ion-text>Last Name</ion-text
+										><ion-text
+											color="danger"
+											*ngIf="
+												form.controls.lastName
+													.touched &&
+												form.controls.lastName.invalid
+											"
+											>Invalid</ion-text
+										></ion-label
+									>
+									<ion-input
+										aria-label="Last Name"
+										type="text"
+										formControlName="lastName"
+										name="lastName"
+									/>
+								</ion-col>
+							</ion-row>
+						</ion-item>
+					</ion-list>
+
+					<ion-list lines="none">
+						<ion-item>
+							<ion-button
+								slot="end"
+								(click)="cancel()"
+								fill="clear"
+								color="dark"
+							>
+								Cancel
+							</ion-button>
+						</ion-item>
+					</ion-list>
+				</form>
+			</ion-card>
+		</div>
+	</div>
+</ion-content>

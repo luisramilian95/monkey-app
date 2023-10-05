@@ -38,4 +38,30 @@ const UPDATE_PROFILE = gql`
 	}
 `;
 
-export { PROFILE_QUERY, UPDATE_PROFILE };
+const ADD_CREDIT_CARD = gql`
+	mutation AddCreditCard(
+		$firstName: String
+		$lastName: String
+		$cardNumber: String
+		$expirationDate: String
+		$cvv: String
+	) {
+		addCreditCard(
+			firstName: $firstName
+			lastName: $lastName
+			cardNumber: $cardNumber
+			expirationDate: $expirationDate
+			cvv: $cvv
+		) {
+			id
+			firstName
+			lastName
+			cardNumber
+			company
+			expirationDate
+			default
+		}
+	}
+`;
+
+export { PROFILE_QUERY, UPDATE_PROFILE, ADD_CREDIT_CARD };

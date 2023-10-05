@@ -1,0 +1,16 @@
+.ticket {
+	display: flex;
+	justify-content: center;
+	justify-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+.ticket app-ticket-component {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 80%;
+	height: 100%;
+	max-width: 350px;
+}

@@ -40,8 +40,6 @@ export class GraphQLService {
 			httpLink.create({ uri: this.uri }),
 		]);
 
-		console.log(link);
-
 		apollo.create({
 			link,
 			cache: new InMemoryCache(),

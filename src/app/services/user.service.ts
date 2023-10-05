@@ -1,7 +1,8 @@
 import { Injectable } from "@angular/core";
-import { User } from "@models/user.interface";
+import { CreditCard, User } from "@models/user.interface";
 import { Apollo } from "apollo-angular";
 import {
+	ADD_CREDIT_CARD,
 	PROFILE_QUERY,
 	UPDATE_PROFILE,
 } from "src/app/graphql/users/users.graphql";
@@ -32,6 +33,15 @@ export class UserService {
 				lastName: user.lastName,
 				phone: user.phone,
 				profileImage: user.profileImage,
+			},
+		});
+	}
+
+	public addCreditCard(creditCard: CreditCard) {
+		return this.apollo.mutate<CreditCard>({
+			mutation: ADD_CREDIT_CARD,
+			variables: {
+				...creditCard,
 			},
 		});
 	}

@@ -7,7 +7,7 @@ import { AccountRoutingModule } from "./account-routing.module";
 import { AccountPage } from "./page/account/account.page";
 import { PaymentMethodsPage } from "./page/payment-methods/payment-methods.page";
 import { MaskitoModule } from "@maskito/angular";
-import { NewPaymentMethodPage } from "./page/new-payment-method/new-payment-method.page";
+import { CreditCardComponent } from "./components/credit-card/credit-card.component";
 
 @NgModule({
 	imports: [
@@ -18,6 +18,6 @@ import { NewPaymentMethodPage } from "./page/new-payment-method/new-payment-meth
 		AccountRoutingModule,
 		MaskitoModule,
 	],
-	declarations: [AccountPage, PaymentMethodsPage, NewPaymentMethodPage],
+	declarations: [AccountPage, PaymentMethodsPage, CreditCardComponent],
 })
 export class AccountModule {}
