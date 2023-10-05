@@ -7,9 +7,8 @@ import { IonicModule, IonicRouteStrategy } from "@ionic/angular";
 import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { HttpClientModule } from "@angular/common/http";
-
-import { TabsComponent } from "@components/tabs/tabs.component";
 import { GraphQLModule } from "./graphql/graphql.module";
+import { TabsComponent } from "@shared/components/tabs/tabs.component";
 
 @NgModule({
 	declarations: [AppComponent, TabsComponent],

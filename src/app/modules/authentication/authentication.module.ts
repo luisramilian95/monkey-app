@@ -6,7 +6,7 @@ import { LoginPage } from "@authentication/page/login/login.page";
 import { RegisterPage } from "@authentication/page/register/register.page";
 import { RecoveryPage } from "@authentication/page/recovery/recovery.page";
 import { ForgetPasswordPage } from "@authentication/page/forget-password/forget-password.page";
-import { NavBarComponent } from "@authentication/components/nav-bar/nav-bar.component";
+import { AuthNavBarComponent } from "@authentication/components/auth-nav-bar/nav-bar.component";
 import { PasswordInputComponent } from "@authentication/components/password-input/password-input.component";
 
 import { AuthenticationRoutingModule } from "@authentication/authentication-routing.module";
@@ -25,7 +25,7 @@ import { ValidationCodeComponent } from "@authentication/components/validation-c
 		RegisterPage,
 		RecoveryPage,
 		ForgetPasswordPage,
-		NavBarComponent,
+		AuthNavBarComponent,
 		PasswordInputComponent,
 		ValidationCodeComponent,
 	],
