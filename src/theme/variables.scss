@@ -4,10 +4,18 @@
 /** Ionic CSS Variables **/
 :root {
 	/** golipass **/
+
+	--ion-color-golipass: #e83c54;
+	--ion-color-golipass-rgb: rgb(232, 60, 84);
+	--ion-color-golipass-contrast: #00203f;
+	--ion-color-golipass-contrast-rgb: rgb(0, 32, 63);
+	--ion-color-golipass-shade: #6e1640;
+	--ion-color-golipass-tint: #f3d0d5;
+
 	--ion-color-primary: #e83c54;
 	--ion-color-primary-rgb: rgb(232, 60, 84);
 	--ion-color-primary-contrast: #00203f;
-	--ion-color-primary-rgb: rgb(0, 32, 63);
+	--ion-color-primary-contrast-rgb: rgb(0, 32, 63);
 	--ion-color-primary-shade: #6e1640;
 	--ion-color-primary-tint: #e33c54;
 
@@ -91,17 +99,17 @@
    */
 
 	body {
-		// --ion-color-golipass: #e83c54;
-		// --ion-color-golipass-rgb: rgb(232, 60, 84);
-		// --ion-color-golipass-contrast: #00203f;
-		// --ion-color-golipass-rgb: rgb(0, 32, 63);
-		// --ion-color-golipass-shade: #6e1640;
-		// --ion-color-golipass-tint: #e33c54;
+		--ion-color-golipass: #e83c54;
+		--ion-color-golipass-rgb: rgb(232, 60, 84);
+		--ion-color-golipass-contrast: #00203f;
+		--ion-color-golipass-contrast-rgb: rgb(0, 32, 63);
+		--ion-color-golipass-shade: #6e1640;
+		--ion-color-golipass-tint: #e33c54;
 
 		--ion-color-primary: #e83c54;
 		--ion-color-primary-rgb: rgb(232, 60, 84);
 		--ion-color-primary-contrast: #00203f;
-		--ion-color-primary-rgb: rgb(0, 32, 63);
+		--ion-color-primary-contrast-rgb: rgb(0, 32, 63);
 		--ion-color-primary-shade: #6e1640;
 		--ion-color-primary-tint: #e33c54;
 

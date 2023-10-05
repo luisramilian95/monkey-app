@@ -6,6 +6,7 @@ import jsSHA from "jssha";
 })
 export class PasswordGeneratorService {
 	private readonly BASE_32_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
+	private readonly INTERVAL = 30000.0;
 
 	constructor() {}
 
@@ -41,15 +42,24 @@ export class PasswordGeneratorService {
 		return hex;
 	}
 
-	public getOTP(secret: string) {
-		try {
-			const currentTime = new Date().getTime();
+	public getTOTP(secret: string, isLastTime: boolean) {
+		const currentTime: number = new Date().getTime();
 
-			let epoch = Math.floor(currentTime / 30000.0);
+		if (!isLastTime) return this.getOTP(secret, currentTime);
+
+		const lastTime =
+			Math.floor(this.INTERVAL - (currentTime % this.INTERVAL)) + 5;
+
+		return this.getOTP(secret, lastTime);
+	}
+
+	public getOTP(secret: string, time: number) {
+		try {
+			const epoch = Math.floor(time / this.INTERVAL);
 
 			const timeToHex = this.dec2hex(epoch);
 
-			let key = this.leftPad(timeToHex, 16, "0");
+			const key = this.leftPad(timeToHex, 16, "0");
 
 			const secrets = this.base32toHex(secret);
 			let hMac = new jsSHA("SHA-1", "TEXT");

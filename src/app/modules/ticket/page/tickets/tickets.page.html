@@ -4,26 +4,22 @@
 	</ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-	<ion-list lines="none">
-		<ion-item
-			*ngFor="let password of passwords"
-			(click)="copy(password.password)"
-		>
-			{{password.password}}
-			<ion-note item-right>{{password.title}}</ion-note>
-		</ion-item>
-	</ion-list>
-
-	<ion-list lines="none">
-		<ion-item [button]="true" detail="false" routerLink="/tickets/ticket">
-			<app-ticket-item></app-ticket-item>
-		</ion-item>
-		<ion-item>
-			<app-ticket-item></app-ticket-item>
-		</ion-item>
-		<ion-item>
-			<app-ticket-item></app-ticket-item>
-		</ion-item>
-	</ion-list>
+<ion-content [fullscreen]="true" color="light">
+	<div class="tickets-container">
+		<ion-list lines="none">
+			<ion-item
+				[button]="true"
+				detail="false"
+				routerLink="/tickets/ticket"
+			>
+				<app-ticket-item></app-ticket-item>
+			</ion-item>
+			<ion-item>
+				<app-ticket-item></app-ticket-item>
+			</ion-item>
+			<ion-item>
+				<app-ticket-item></app-ticket-item>
+			</ion-item>
+		</ion-list>
+	</div>
 </ion-content>

@@ -1,8 +1,8 @@
-<div class="ticket-item-container">
+<div class="user-ticket-container">
 	<div class="ticket-header">
 		<div>
-			<h1>Concert Name</h1>
-			<h2>Music Concert</h2>
+			<h1>{{ ticket.event.name }}</h1>
+			<h2>{{ ticket.event.eventType }}</h2>
 		</div>
 	</div>
 
@@ -13,40 +13,43 @@
 	<section>
 		<div class="item">
 			<h3>Place</h3>
-			<h4>Golden Stadium</h4>
+			<h4>{{ ticket.venue.name }}</h4>
 		</div>
 	</section>
 
 	<section>
 		<div class="item">
 			<h3>Date</h3>
-			<h4>20, Nov 2023</h4>
+			<h4>{{ ticket.event.startTime | date }}</h4>
 		</div>
 		<div class="item">
 			<h3>Time</h3>
-			<h4>9:00PM - 12:00PM</h4>
+			<h4>
+				{{ ticket.event.startTime | date : "hh:mm a" }} -
+				{{ ticket.event.startTime | date : "hh:mm a" }}
+			</h4>
 		</div>
 	</section>
 
 	<section>
 		<div class="item">
 			<h3>Section</h3>
-			<h4>General 001</h4>
+			<h4>{{ ticket.zone.name }}</h4>
 		</div>
 		<div class="item">
 			<h3>Seat</h3>
-			<h4>23</h4>
+			<h4>{{ ticket.seat.name }}</h4>
 		</div>
 	</section>
 
 	<section>
 		<div class="item">
 			<h3>Cost</h3>
-			<h4>24$</h4>
+			<h4>{{ ticket.cost | currency }}</h4>
 		</div>
 		<div class="item">
 			<h3>Order</h3>
-			<h4>23234444</h4>
+			<h4>{{ ticket.orderNumber }}</h4>
 		</div>
 	</section>
 
@@ -58,8 +61,11 @@
 
 	<section class="qr-code">
 		<div>
-			<ion-progress-bar [value]="progress"></ion-progress-bar>
-			<img src="assets/qr-code.png" />
+			<ion-progress-bar
+				[buffer]="1"
+				[value]="progress"
+			></ion-progress-bar>
+			<qrcode [qrdata]="password" [width]="200"></qrcode>
 		</div>
 	</section>
 </div>

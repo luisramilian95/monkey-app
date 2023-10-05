@@ -25,6 +25,15 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
+.ion-color-golipass {
+	--ion-color-base: var(--ion-color-golipass);
+	--ion-color-base-rgb: var(--ion-color-golipass-rgb);
+	--ion-color-contrast: var(--ion-color-golipass-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-golipass-contrast-rgb);
+	--ion-color-shade: var(--ion-color-golipass-shade);
+	--ion-color-tint: var(--ion-color-golipass-tint);
+}
+
 input:focus-visible {
 	outline: none !important;
 }

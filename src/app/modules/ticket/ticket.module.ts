@@ -7,8 +7,8 @@ import { TicketRoutingModule } from "./ticket-routing.module";
 import { TicketsPage } from "./page/tickets/tickets.page";
 import { TicketItemComponent } from "./components/ticket-item/ticket-item.component";
 import { TicketPage } from "./page/ticket/ticket.page";
-import { TicketComponent } from "src/app/modules/ticket/components/ticket/ticket.component";
-
+import { UserTicketComponent } from "src/app/modules/ticket/components/user-ticket/user-ticket.component";
+import { QRCodeModule } from "angularx-qrcode";
 @NgModule({
 	imports: [
 		CommonModule,
@@ -16,12 +16,13 @@ import { TicketComponent } from "src/app/modules/ticket/components/ticket/ticket
 		ReactiveFormsModule,
 		IonicModule,
 		TicketRoutingModule,
+		QRCodeModule,
 	],
 	declarations: [
 		TicketsPage,
 		TicketItemComponent,
 		TicketPage,
-		TicketComponent,
+		UserTicketComponent,
 	],
 })
 export class TicketModule {}
