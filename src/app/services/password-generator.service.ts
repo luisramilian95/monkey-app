@@ -47,7 +47,7 @@ export class PasswordGeneratorService {
 
 		if (!isLastTime) return this.getOTP(secret, currentTime);
 
-		const timeRemaining = currentTime - (currentTime % this.INTERVAL) + 5;
+		const timeRemaining = currentTime - (currentTime % this.INTERVAL) - 5;
 
 		return this.getOTP(secret, timeRemaining);
 	}
