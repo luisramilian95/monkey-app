@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { BlockUI, NgBlockUI } from "ng-block-ui";
+import { AuthenticationService } from "@services/authentication.service";
 
 @Component({
 	selector: "app-loader",
@@ -7,7 +7,11 @@ import { BlockUI, NgBlockUI } from "ng-block-ui";
 	styleUrls: ["./loader.component.scss"],
 })
 export class LoaderComponent implements OnInit {
-	constructor() {}
+	constructor(private authService: AuthenticationService) {}
 
 	ngOnInit() {}
+
+	onClick() {
+		this.authService.refreshToken();
+	}
 }

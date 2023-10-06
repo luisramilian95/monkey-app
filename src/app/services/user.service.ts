@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { CreditCard, User } from "@models/user.interface";
 import { Apollo } from "apollo-angular";
+
 import {
 	ADD_CREDIT_CARD,
 	PROFILE_QUERY,

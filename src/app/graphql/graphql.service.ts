@@ -1,30 +1,34 @@
 import { Injectable } from "@angular/core";
 import { HttpLink } from "apollo-angular/http";
-import { ApolloLink, InMemoryCache } from "@apollo/client/core";
+import { ApolloLink, GraphQLRequest, InMemoryCache } from "@apollo/client/core";
 import { TokenService } from "@services/token.service";
 import { setContext } from "@apollo/client/link/context";
 
 import { environment } from "@environments/environment";
 import { Apollo } from "apollo-angular";
-
+import { onError } from "@apollo/client/link/error";
+import { AuthenticationService } from "@services/authentication.service";
 @Injectable({
 	providedIn: "root",
 })
 export class GraphQLService {
 	private readonly uri: string = environment.graphql_uri;
 
-	constructor(private tokenService: TokenService) {}
+	constructor(
+		private tokenService: TokenService,
+		private authService: AuthenticationService
+	) {}
 
 	async createApolloClientOptions(httpLink: HttpLink, apollo: Apollo) {
-		const token = await this.tokenService.getToken();
-
 		const basic = setContext((operation, context) => ({
 			headers: {
-				Accept: "charset=utf-8",
+				Accept: "text/plain; charset=UTF-8",
 			},
 		}));
 
-		const auth = setContext((operation, context) => {
+		const auth = setContext(async (operation, context) => {
+			const token = await this.tokenService.getToken();
+
 			return token === null
 				? {}
 				: {
@@ -34,6 +38,21 @@ export class GraphQLService {
 				  };
 		});
 
+		const linkError = onError(
+			({ forward, graphQLErrors, networkError, operation }) => {
+				if (graphQLErrors) {
+					graphQLErrors.map(({ message, locations, path }) => {
+						console.log(graphQLErrors);
+						if (message.toLowerCase() === "unauthorized") {
+							this.authService.refreshToken().subscribe(() => {
+								return forward(operation);
+							});
+						}
+					});
+				}
+			}
+		);
+
 		const link = ApolloLink.from([
 			basic,
 			auth,
@@ -41,7 +60,7 @@ export class GraphQLService {
 		]);
 
 		apollo.create({
-			link,
+			link: linkError.concat(link),
 			cache: new InMemoryCache(),
 		});
 	}
