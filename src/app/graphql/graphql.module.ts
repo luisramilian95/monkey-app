@@ -4,12 +4,10 @@ import { APP_INITIALIZER, NgModule } from "@angular/core";
 
 import { GraphQLService } from "./graphql.service";
 import { HttpClientModule } from "@angular/common/http";
-import { AuthenticationService } from "@services/authentication.service";
 
 export function createApollo(
 	httpLink: HttpLink,
 	graphQLService: GraphQLService,
-	authService: AuthenticationService,
 	apollo: Apollo
 ) {
 	return () => graphQLService.createApolloClientOptions(httpLink, apollo);
@@ -22,7 +20,7 @@ export function createApollo(
 		{
 			provide: APP_INITIALIZER,
 			useFactory: createApollo,
-			deps: [HttpLink, GraphQLService, Apollo, AuthenticationService],
+			deps: [HttpLink, GraphQLService, Apollo],
 			multi: true,
 		},
 	],
