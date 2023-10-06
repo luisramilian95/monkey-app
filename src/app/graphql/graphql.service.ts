@@ -40,6 +40,20 @@ export class GraphQLService {
 
 		const linkError = onError(
 			({ forward, graphQLErrors, networkError, operation }) => {
+				console.log(networkError);
+
+				const error = { ...networkError };
+				console.log(error);
+
+				if (networkError) {
+					let error: any = JSON.parse(JSON.stringify(networkError));
+					if (error.status === 401) {
+						this.authService.refreshToken().subscribe(() => {
+							return forward(operation);
+						});
+					}
+				}
+
 				if (graphQLErrors) {
 					graphQLErrors.map(({ message, locations, path }) => {
 						console.log(graphQLErrors);

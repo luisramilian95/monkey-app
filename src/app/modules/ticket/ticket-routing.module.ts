@@ -9,10 +9,6 @@ const routes: Routes = [
 		component: TicketsPage,
 	},
 	{
-		path: "tickets",
-		component: TicketsPage,
-	},
-	{
 		path: "ticket",
 		component: TicketPage,
 	},

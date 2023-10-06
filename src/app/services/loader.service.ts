@@ -5,7 +5,7 @@ import { LoadingController } from "@ionic/angular";
 	providedIn: "root",
 })
 export class LoaderService {
-	isLoading = false;
+	private isLoading = false;
 
 	private loader: HTMLIonLoadingElement;
 	constructor(private loaderController: LoadingController) {}
@@ -15,9 +15,7 @@ export class LoaderService {
 		return await this.loaderController.create({}).then((loader) => {
 			loader.present().then(() => {
 				if (!this.isLoading) {
-					loader
-						.dismiss()
-						.then(() => console.log("abort presenting"));
+					loader.dismiss().then();
 				}
 			});
 		});

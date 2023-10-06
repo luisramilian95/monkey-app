@@ -59,9 +59,23 @@ const ADD_CREDIT_CARD = gql`
 			cardNumber
 			company
 			expirationDate
-			default
+			defaultCard
 		}
 	}
 `;
 
-export { PROFILE_QUERY, UPDATE_PROFILE, ADD_CREDIT_CARD };
+const GET_CREDIT_CARDS = gql`
+	query {
+		paymentMethods {
+			id
+			firstName
+			lastName
+			cardNumber
+			company
+			expirationDate
+			defaultCard
+		}
+	}
+`;
+
+export { PROFILE_QUERY, UPDATE_PROFILE, ADD_CREDIT_CARD, GET_CREDIT_CARDS };

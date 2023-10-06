@@ -6,10 +6,6 @@ const routes: Routes = [
 		path: "",
 		component: SettingsPage,
 	},
-	{
-		path: "settings",
-		component: SettingsPage,
-	},
 ];
 
 @NgModule({

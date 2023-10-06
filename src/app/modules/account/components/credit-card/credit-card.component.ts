@@ -8,6 +8,7 @@ import {
 import { ModalController } from "@ionic/angular";
 import { MaskitoElementPredicateAsync, MaskitoOptions } from "@maskito/core";
 import { CreditCard } from "@models/user.interface";
+import { ToastService } from "@services/toast.service";
 import { UserService } from "@services/user.service";
 
 @Component({
@@ -65,7 +66,8 @@ export class CreditCardComponent implements OnInit {
 	constructor(
 		private formBuilder: FormBuilder,
 		private modalCtrl: ModalController,
-		private userService: UserService
+		private userService: UserService,
+		private toastService: ToastService
 	) {}
 
 	ngOnInit() {}
@@ -85,6 +87,14 @@ export class CreditCardComponent implements OnInit {
 			default: false,
 		};
 
-		return this.modalCtrl.dismiss("Hello", "confirm");
+		this.userService.addCreditCard(creditCard).subscribe({
+			next: () => {
+				this.modalCtrl.dismiss();
+			},
+			error: (error) => {
+				console.log(error);
+				this.toastService.presentToast(error.message);
+			},
+		});
 	}
 }

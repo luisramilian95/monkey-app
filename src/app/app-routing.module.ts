@@ -25,8 +25,8 @@ const routes: Routes = [
 				path: "events",
 				title: "Events",
 				loadChildren: () =>
-					import("./modules/home/home.module").then(
-						(m) => m.HomePageModule
+					import("./modules/events/events.module").then(
+						(m) => m.EventsModule
 					),
 			},
 			{
