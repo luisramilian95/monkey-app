@@ -45,6 +45,7 @@ export class TokenService {
 	}
 
 	public async removeToken() {
+		this.token$.next(null);
 		await Preferences.remove({ key: this.TOKEN_NAME });
 		await Preferences.remove({ key: this.REFRESH_TOKEN_NAME });
 	}

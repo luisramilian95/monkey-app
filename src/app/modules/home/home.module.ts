@@ -5,9 +5,9 @@ import { FormsModule } from "@angular/forms";
 import { HomePage } from "./home.page";
 
 import { HomePageRoutingModule } from "./home-routing.module";
-import { LoaderComponent } from "@shared/components/loader/loader.component";
+import { EventsCategoryListComponent } from "../events/components/events-category-list/events-category-list.component";
 @NgModule({
 	imports: [CommonModule, FormsModule, IonicModule, HomePageRoutingModule],
-	declarations: [HomePage, LoaderComponent],
+	declarations: [HomePage, EventsCategoryListComponent],
 })
 export class HomePageModule {}

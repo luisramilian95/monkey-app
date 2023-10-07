@@ -13,20 +13,20 @@
 	<section>
 		<div class="item">
 			<h3>Place</h3>
-			<h4>{{ ticket.venue.name }}</h4>
+			<h4>{{ ticket.event.venue.name }}</h4>
 		</div>
 	</section>
 
 	<section>
 		<div class="item">
 			<h3>Date</h3>
-			<h4>{{ ticket.event.startTime | date }}</h4>
+			<h4>{{ ticket.event.startDate | date }}</h4>
 		</div>
 		<div class="item">
 			<h3>Time</h3>
 			<h4>
-				{{ ticket.event.startTime | date : "hh:mm a" }} -
-				{{ ticket.event.startTime | date : "hh:mm a" }}
+				{{ ticket.event.startDate | date : "hh:mm a" }} -
+				{{ ticket.event.endDate | date : "hh:mm a" }}
 			</h4>
 		</div>
 	</section>

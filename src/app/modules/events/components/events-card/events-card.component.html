@@ -1,0 +1,20 @@
+<div class="events-container">
+	<ion-card button routerLink="/events/performer">
+		<div class="wrap">
+			<ion-card-title>{{ event.name }}</ion-card-title>
+			<img alt="Event Image" [src]="event.eventImageUrl" />
+		</div>
+		<ion-card-header>
+			<div class="event-data">
+				<ion-card-subtitle>
+					{{ event.startDate | date : "EEEE, MMMM d" }} at
+					{{ event.startDate | date : "hh:mm a" }} <br />
+					{{ event.venue.name }}</ion-card-subtitle
+				>
+				<ion-button fill="clear">
+					<ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+				</ion-button>
+			</div>
+		</ion-card-header>
+	</ion-card>
+</div>

@@ -1,7 +1,6 @@
 export interface Ticket {
 	id?: string;
 	event: Event;
-	venue: EventVenue;
 	zone: EventZone;
 	seat: EventSeat;
 	status: TicketStatus;
@@ -12,9 +11,12 @@ export interface Ticket {
 export interface Event {
 	id?: string;
 	name: string;
-	eventType: string;
-	startTime: Date;
-	endTime: Date;
+	eventType?: string;
+	startDate: Date;
+	endDate: Date;
+	description?: string;
+	eventImageUrl?: string;
+	venue: EventVenue;
 }
 
 export interface EventVenue {

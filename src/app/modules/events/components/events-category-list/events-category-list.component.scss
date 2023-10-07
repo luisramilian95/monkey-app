@@ -1,0 +1,59 @@
+.event-list-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+.event-list-header h1 {
+	font-size: 1.2rem;
+}
+
+.event-list-header ion-text {
+	font-size: 0.7rem;
+}
+
+.horizontal-list {
+	overflow-x: scroll;
+	overflow-y: hidden;
+	white-space: nowrap;
+
+	.card {
+		display: inline-block;
+	}
+}
+
+.horizontal-list ion-card {
+	margin: 5px;
+	height: 210px;
+	width: 200px;
+	border-radius: 5px;
+	box-shadow: none !important;
+}
+
+.horizontal-list ion-card .event-track {
+	position: relative;
+	top: 40px;
+}
+
+.horizontal-list ion-card ion-card-header {
+	padding: 1px;
+}
+
+.horizontal-list ion-card ion-card-title {
+	font-size: 0.8rem;
+}
+
+.horizontal-list ion-card ion-card-subtitle {
+	font-size: 0.7rem;
+}
+
+.horizontal-list ion-card .event-data {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.horizontal-list ion-card img {
+	height: 150px;
+}

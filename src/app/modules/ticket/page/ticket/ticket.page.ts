@@ -12,14 +12,15 @@ export class TicketPage implements OnInit {
 	constructor() {
 		this.ticket = {
 			id: "6515beb37a32274b312e8d7d",
-			venue: {
-				name: "Estadio de Ejercito",
-			},
+
 			event: {
 				name: "Taylor Swift",
 				eventType: "Music Concert",
-				startTime: new Date(),
-				endTime: new Date(),
+				startDate: new Date(),
+				endDate: new Date(),
+				venue: {
+					name: "Estadio de Ejercito",
+				},
 			},
 			zone: {
 				id: "6515beb37a32274b312e8d7d",

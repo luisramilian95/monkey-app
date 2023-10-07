@@ -1,15 +1,30 @@
-<ion-content [fullscreen]="true" class="ion-padding">
-	<div id="container">
-		<strong>Ready to create an app?</strong>
-		<p>
-			Start with Ionic
-			<a
-				target="_blank"
-				rel="noopener noreferrer"
-				href="https://ionicframework.com/docs/components"
-				>UI Components</a
-			>
-		</p>
+<ion-header [translucent]="true" class="ion-no-border">
+	<ion-toolbar>
+		<ion-title>golipass</ion-title>
+	</ion-toolbar>
+	<ion-toolbar
+		><ion-searchbar animated="true" placeholder="search"></ion-searchbar>
+	</ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+	<ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+		<ion-refresher-content></ion-refresher-content>
+	</ion-refresher>
+
+	<div class="home-container">
+		<ion-list>
+			<ion-item>
+				<app-events-category-list></app-events-category-list>
+			</ion-item>
+			<ion-item>
+				<app-events-category-list></app-events-category-list>
+			</ion-item>
+			<ion-item>
+				<app-events-category-list></app-events-category-list>
+			</ion-item>
+			<ion-item>
+				<app-events-category-list></app-events-category-list>
+			</ion-item>
+		</ion-list>
 	</div>
-	<app-loader></app-loader>
 </ion-content>
