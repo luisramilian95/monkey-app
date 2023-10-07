@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit } from "@angular/core";
+import { ModalController } from "@ionic/angular";
 @Component({
-  selector: 'app-purchase',
-  templateUrl: './purchase.page.html',
-  styleUrls: ['./purchase.page.scss'],
+	selector: "app-purchase",
+	templateUrl: "./purchase.page.html",
+	styleUrls: ["./purchase.page.scss"],
 })
 export class PurchasePage implements OnInit {
+	canDismiss = false;
 
-  constructor() { }
+	presentingElement: Element | null;
 
-  ngOnInit() {
-  }
+	constructor(private modalCtrl: ModalController) {}
 
+	ngOnInit() {}
 }

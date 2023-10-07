@@ -1,6 +1,6 @@
 <div class="event-list-header">
-	<h1>Sport</h1>
-	<ion-button color="primary" fill="clear">
+	<h1>{{ category.name }}</h1>
+	<ion-button color="primary" fill="clear" (click)="goToEvents()">
 		<ion-text> View all </ion-text>
 		<ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
 	</ion-button>
@@ -8,7 +8,7 @@
 
 <div class="horizontal-list">
 	<div class="card" *ngFor="let event of events">
-		<ion-card button>
+		<ion-card button routerLink="/events/purchase">
 			<img alt="event image" [src]="event.eventImageUrl" />
 
 			<ion-card-header>

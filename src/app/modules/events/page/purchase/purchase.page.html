@@ -1,13 +1,28 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>purchase</ion-title>
-  </ion-toolbar>
+<ion-header [translucent]="true" class="ion-no-border">
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button></ion-back-button>
+		</ion-buttons>
+		<ion-title>Taylor Swift </ion-title>
+	</ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">purchase</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" color="light">
+	<div class="map-container">
+		<img src="assets/event-venue.png" />
+	</div>
+
+	<ion-modal
+		#modal
+		trigger="open-modal"
+		[isOpen]="true"
+		[initialBreakpoint]="0.4"
+		[breakpoints]="[0.4, 0.5, 0.8, 1]"
+		[backdropDismiss]="false"
+		[backdropBreakpoint]="0.8"
+	>
+		<ng-template>
+			<app-event-tickets> </app-event-tickets>
+		</ng-template>
+	</ion-modal>
 </ion-content>

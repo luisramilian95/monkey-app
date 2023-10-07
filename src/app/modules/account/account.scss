@@ -1,14 +1,15 @@
 .account-form {
 	display: flex;
-	justify-content: center;
+	align-items: center;
 	width: 100%;
 	height: 100%;
+	flex-direction: column;
 }
 
 .account-form ion-card {
-	width: 100%;
+	width: 90%;
 	max-width: 400px;
-	box-shadow: none !important;
+	box-shadow: none;
 }
 
 .account-form .header {

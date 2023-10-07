@@ -7,26 +7,40 @@ import {
 	GET_CREDIT_CARDS,
 	PROFILE_QUERY,
 	UPDATE_PROFILE,
-} from "src/app/graphql/users/users.graphql";
+} from "src/app/graphql/users.graphql";
 import { LoaderService } from "./loader.service";
-import { finalize, tap } from "rxjs";
+import { BehaviorSubject, finalize, tap } from "rxjs";
 
 @Injectable({
 	providedIn: "root",
 })
 export class UserService {
+	public user$ = new BehaviorSubject<User | null | undefined>(null);
+
 	constructor(private apollo: Apollo, private loaderService: LoaderService) {}
 
 	public getSubscribeProfile() {
-		return this.apollo.watchQuery<User>({
-			query: PROFILE_QUERY,
-		}).valueChanges;
+		return this.apollo
+			.watchQuery<User>({
+				query: PROFILE_QUERY,
+			})
+			.valueChanges.pipe(
+				tap((response) => {
+					this.user$.next(response.data);
+				})
+			);
 	}
 
 	public getProfile() {
-		return this.apollo.query<User>({
-			query: PROFILE_QUERY,
-		});
+		return this.apollo
+			.query<User>({
+				query: PROFILE_QUERY,
+			})
+			.pipe(
+				tap((response) => {
+					this.user$.next(response?.data);
+				})
+			);
 	}
 
 	public updateProfile(user: User) {
@@ -41,7 +55,12 @@ export class UserService {
 					profileImage: user.profileImage,
 				},
 			})
-			.pipe(finalize(() => this.loaderService.dismiss()));
+			.pipe(
+				tap((response) => {
+					this.user$.next(response.data);
+				}),
+				finalize(() => this.loaderService.dismiss())
+			);
 	}
 
 	public getCreditCards() {

@@ -10,115 +10,113 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" scroll-y="false">
+	<h1 class="title">Personal Information</h1>
 	<div class="account-form">
-		<div>
-			<h1 class="title">Personal Information</h1>
-			<ion-card>
-				<ion-list lines="none">
-					<ion-item>
-						<ion-avatar slot="start">
-							<img
-								alt="Silhouette of a person's head"
-								src="https://ionicframework.com/docs/img/demos/avatar.svg"
-							/>
-						</ion-avatar>
-						<ion-label>
-							<h1>{{user.firstName}} {{user.lastName}}</h1>
-							<h3>{{user.username}}</h3>
+		<ion-card>
+			<ion-list lines="none">
+				<ion-item>
+					<ion-avatar slot="start">
+						<img
+							alt="Silhouette of a person's head"
+							src="https://ionicframework.com/docs/img/demos/avatar.svg"
+						/>
+					</ion-avatar>
+					<ion-label>
+						<h1>{{user.firstName}} {{user.lastName}}</h1>
+						<h3>{{user.username}}</h3>
+					</ion-label>
+				</ion-item>
+			</ion-list>
+		</ion-card>
+		<ion-card>
+			<form [formGroup]="form">
+				<ion-text color="dark">
+					<h3>Profile</h3>
+				</ion-text>
+
+				<ion-row>
+					<ion-col>
+						<ion-label color="dark" class="header"
+							><ion-text>First Name</ion-text>
+							<ion-text
+								*ngIf="form.controls.firstName.touched && form.controls.firstName.invalid"
+								color="danger"
+								>Required</ion-text
+							>
 						</ion-label>
-					</ion-item>
-				</ion-list>
-			</ion-card>
-			<ion-card>
-				<form [formGroup]="form">
-					<ion-text color="dark">
-						<h3>Profile</h3>
-					</ion-text>
+						<ion-input
+							placeholder="First Name"
+							type="text"
+							aria-label="first name"
+							name="firstName"
+							formControlName="firstName"
+						/>
+					</ion-col>
+					<ion-col>
+						<ion-label color="dark" class="header"
+							><ion-text>Last Name</ion-text
+							><ion-text
+								color="danger"
+								*ngIf="form.controls.lastName.touched && form.controls.lastName.invalid"
+								>Required</ion-text
+							></ion-label
+						>
+						<ion-input
+							placeholder="Last Name"
+							type="text"
+							type="text"
+							aria-label="last name"
+							name="lastName"
+							formControlName="lastName"
+						/>
+					</ion-col>
+				</ion-row>
 
-					<ion-row>
-						<ion-col>
-							<ion-label color="dark" class="header"
-								><ion-text>First Name</ion-text>
-								<ion-text
-									*ngIf="form.controls.firstName.touched && form.controls.firstName.invalid"
-									color="danger"
-									>Required</ion-text
-								>
-							</ion-label>
-							<ion-input
-								placeholder="First Name"
-								type="text"
-								aria-label="first name"
-								name="firstName"
-								formControlName="firstName"
-							/>
-						</ion-col>
-						<ion-col>
-							<ion-label color="dark" class="header"
-								><ion-text>Last Name</ion-text
-								><ion-text
-									color="danger"
-									*ngIf="form.controls.lastName.touched && form.controls.lastName.invalid"
-									>Required</ion-text
-								></ion-label
+				<ion-text color="dark">
+					<h3>Contact Information</h3>
+				</ion-text>
+
+				<ion-row>
+					<ion-col>
+						<ion-label color="dark" class="header"
+							><ion-text>Email</ion-text>
+							<ion-text
+								*ngIf="form.controls.email.touched && form.controls.email.invalid"
+								color="danger"
+								>Required</ion-text
 							>
-							<ion-input
-								placeholder="Last Name"
-								type="text"
-								type="text"
-								aria-label="last name"
-								name="lastName"
-								formControlName="lastName"
-							/>
-						</ion-col>
-					</ion-row>
-
-					<ion-text color="dark">
-						<h3>Contact Information</h3>
-					</ion-text>
-
-					<ion-row>
-						<ion-col>
-							<ion-label color="dark" class="header"
-								><ion-text>Email</ion-text>
-								<ion-text
-									*ngIf="form.controls.email.touched && form.controls.email.invalid"
-									color="danger"
-									>Required</ion-text
-								>
-							</ion-label>
-							<ion-input
-								placeholder="Type your Email Address"
-								type="text"
-								aria-label="Email Address"
-								name="email"
-								formControlName="email"
-							/>
-						</ion-col>
-					</ion-row>
-					<ion-row>
-						<ion-col>
-							<ion-label color="dark" class="header"
-								><ion-text>Phone</ion-text>
-								<ion-text
-									*ngIf="form.controls.phone.touched && form.controls.phone.invalid"
-									color="danger"
-									>Required</ion-text
-								></ion-label
-							>
-							<ion-input
-								[maskito]="phoneMask"
-								[maskitoElement]="maskPredicate"
-								placeholder="Type your phone number"
-								type="text"
-								aria-label="phone number"
-								name="phone"
-								formControlName="phone"
-							/>
-						</ion-col>
-					</ion-row>
-				</form>
-			</ion-card>
-		</div>
+						</ion-label>
+						<ion-input
+							placeholder="Type your Email Address"
+							type="text"
+							aria-label="Email Address"
+							name="email"
+							formControlName="email"
+						/>
+					</ion-col>
+				</ion-row>
+				<ion-row>
+					<ion-col>
+						<ion-label color="dark" class="header"
+							><ion-text>Phone</ion-text>
+							<ion-text
+								*ngIf="form.controls.phone.touched && form.controls.phone.invalid"
+								color="danger"
+								>Required</ion-text
+							></ion-label
+						>
+						<ion-input
+							[maskito]="phoneMask"
+							[maskitoElement]="maskPredicate"
+							placeholder="Type your phone number"
+							type="text"
+							aria-label="phone number"
+							name="phone"
+							formControlName="phone"
+						/>
+					</ion-col>
+				</ion-row>
+			</form>
+		</ion-card>
 	</div>
 </ion-content>

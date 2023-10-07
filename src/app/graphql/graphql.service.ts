@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpLink } from "apollo-angular/http";
-import { ApolloLink, GraphQLRequest, InMemoryCache } from "@apollo/client/core";
+import { ApolloLink, InMemoryCache } from "@apollo/client/core";
 import { TokenService } from "@services/token.service";
 import { setContext } from "@apollo/client/link/context";
 
@@ -20,16 +20,10 @@ export class GraphQLService {
 	) {}
 
 	async createApolloClientOptions(httpLink: HttpLink, apollo: Apollo) {
-		const basic = setContext((operation, context) => ({
-			headers: {
-				Accept: "text/plain; charset=UTF-8",
-			},
-		}));
-
 		const auth = setContext(async (operation, context) => {
 			const token = await this.tokenService.getToken();
 
-			return token === null
+			return token == null
 				? {}
 				: {
 						headers: {
@@ -68,7 +62,6 @@ export class GraphQLService {
 		);
 
 		const link = ApolloLink.from([
-			basic,
 			auth,
 			httpLink.create({ uri: this.uri }),
 		]);

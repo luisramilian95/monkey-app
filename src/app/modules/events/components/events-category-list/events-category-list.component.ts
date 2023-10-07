@@ -1,5 +1,5 @@
-import { Component, OnInit } from "@angular/core";
-import { Event } from "@models/ticket.interface";
+import { Component, Input, OnInit } from "@angular/core";
+import { Category, Event } from "@models/ticket.interface";
 import { EventsService } from "@services/events.service";
 
 @Component({
@@ -8,13 +8,19 @@ import { EventsService } from "@services/events.service";
 	styleUrls: ["./events-category-list.component.scss"],
 })
 export class EventsCategoryListComponent implements OnInit {
+	@Input() category: Category;
+
 	public events: Event[];
 
 	constructor(private eventService: EventsService) {}
 
 	ngOnInit() {
-		this.eventService.getAllEvents().subscribe((response: any) => {
-			this.events = [...response.data?.allEvents];
-		});
+		this.eventService
+			.getEventsByCategory(this.category.name)
+			.subscribe((response: any) => {
+				this.events = [...response.data?.eventsByCategoryName];
+			});
 	}
+
+	goToEvents() {}
 }

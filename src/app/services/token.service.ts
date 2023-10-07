@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Preferences } from "@capacitor/preferences";
+import { KeysResult, Preferences } from "@capacitor/preferences";
 import { BehaviorSubject } from "rxjs";
 
 @Injectable({
@@ -38,10 +38,15 @@ export class TokenService {
 	}
 
 	public async getRefreshToken() {
-		const { value } = await Preferences.get({
-			key: this.REFRESH_TOKEN_NAME,
-		});
-		return value;
+		try {
+			const { value } = await Preferences.get({
+				key: this.REFRESH_TOKEN_NAME,
+			});
+			return value;
+		} catch (error) {
+			this.token$.next(null);
+			return null;
+		}
 	}
 
 	public async removeToken() {

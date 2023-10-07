@@ -9,6 +9,9 @@ import { EventsCardComponent } from "./components/events-card/events-card.compon
 import { PerformerPage } from "./page/performer/performer.page";
 import { EventsPerformerComponent } from "./components/events-performer/events-performer.component";
 import { EventsDateComponent } from "./components/events-date/events-date.component";
+import { PurchasePage } from "./page/purchase/purchase.page";
+
+import { EventTicketsComponent } from "./components/event-tickets/event-tickets.component";
 
 @NgModule({
 	imports: [
@@ -24,6 +27,8 @@ import { EventsDateComponent } from "./components/events-date/events-date.compon
 		EventsCardComponent,
 		EventsPerformerComponent,
 		EventsDateComponent,
+		EventTicketsComponent,
+		PurchasePage,
 	],
 })
 export class EventsModule {}

@@ -13,17 +13,10 @@
 
 	<div class="home-container">
 		<ion-list>
-			<ion-item>
-				<app-events-category-list></app-events-category-list>
-			</ion-item>
-			<ion-item>
-				<app-events-category-list></app-events-category-list>
-			</ion-item>
-			<ion-item>
-				<app-events-category-list></app-events-category-list>
-			</ion-item>
-			<ion-item>
-				<app-events-category-list></app-events-category-list>
+			<ion-item *ngFor="let category of categories">
+				<app-events-category-list
+					[category]="category"
+				></app-events-category-list>
 			</ion-item>
 		</ion-list>
 	</div>

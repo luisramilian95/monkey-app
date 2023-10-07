@@ -19,7 +19,6 @@ export class EventsPage implements OnInit {
 	ngOnInit() {
 		this.loaderService.present();
 		this.eventService.getAllEvents().subscribe((response: any) => {
-			this.loaderService.dismiss();
 			this.events = [...response.data?.allEvents];
 		});
 	}

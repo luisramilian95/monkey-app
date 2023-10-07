@@ -21,11 +21,9 @@ export class SettingsPage implements OnInit {
 	) {}
 
 	ngOnInit() {
-		this.profileSubscription = this.userService
-			.getSubscribeProfile()
-			.subscribe(({ data }: any) => {
-				this.user = data.profile;
-			});
+		this.userService.user$.subscribe((response: any) => {
+			if (response) this.user = response.profile;
+		});
 	}
 
 	async logout() {

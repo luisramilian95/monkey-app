@@ -1,3 +1,9 @@
+export interface Category {
+	id?: string;
+	name: string;
+	subcategories: string[];
+}
+
 export interface Ticket {
 	id?: string;
 	event: Event;

@@ -9,48 +9,44 @@
 <ion-content [fullscreen]="true" class="ion-padding">
 	<h1>Payment Methods</h1>
 	<div class="account-form">
-		<div>
-			<ion-list>
-				<ion-item *ngFor="let creditCard of creditCards">
-					<ion-icon
-						slot="start"
-						name="card-outline"
-						size="large"
-					></ion-icon>
-					<ion-label>
-						<h3>
-							{{creditCard.company}} {{creditCard.cardNumber}}
-						</h3>
+		<ion-list>
+			<ion-item *ngFor="let creditCard of creditCards">
+				<ion-icon
+					slot="start"
+					name="card-outline"
+					size="large"
+				></ion-icon>
+				<ion-label>
+					<h3>{{creditCard.company}} {{creditCard.cardNumber}}</h3>
 
-						<div *ngIf="creditCard.default">
-							<ion-badge color="light">Default</ion-badge><br />
-						</div>
-						<ion-note color="medium" class="ion-text-wrap">
-							Expiration Date: {{creditCard.expirationDate}}
-						</ion-note>
-					</ion-label>
+					<div *ngIf="creditCard.default">
+						<ion-badge color="light">Default</ion-badge><br />
+					</div>
+					<ion-note color="medium" class="ion-text-wrap">
+						Expiration Date: {{creditCard.expirationDate}}
+					</ion-note>
+				</ion-label>
 
-					<ion-buttons slot="end">
-						<ion-button
-							fill="clear"
+				<ion-buttons slot="end">
+					<ion-button
+						fill="clear"
+						color="dark"
+						*ngIf="!creditCard.default"
+						>Set Default
+					</ion-button>
+					<ion-button fill="clear">
+						<ion-icon
 							color="dark"
-							*ngIf="!creditCard.default"
-							>Set Default
-						</ion-button>
-						<ion-button fill="clear">
-							<ion-icon
-								color="dark"
-								slot="icon-only"
-								name="close-outline"
-							></ion-icon>
-						</ion-button>
-					</ion-buttons>
-				</ion-item>
-			</ion-list>
+							slot="icon-only"
+							name="close-outline"
+						></ion-icon>
+					</ion-button>
+				</ion-buttons>
+			</ion-item>
+		</ion-list>
 
-			<ion-button expand="block" color="dark" (click)="openModal()"
-				>Add new payment method</ion-button
-			>
-		</div>
+		<ion-button expand="block" color="dark" (click)="openModal()"
+			>Add new payment method</ion-button
+		>
 	</div>
 </ion-content>
